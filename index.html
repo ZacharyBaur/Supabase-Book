@@ -19,5 +19,24 @@
             <!-- Data will be populated here by JavaScript -->
         </tbody>
     </table>
+
+    <script type="module">
+        import { createClient } from '@supabase/supabase-js'
+
+        const supabaseUrl = 'https://rrbzxwuzrfidmjctawaz.supabase.co'
+        const supabaseKey = process.env.SUPABASE_KEY
+        const supabase = createClient(supabaseUrl, supabaseKey)
+
+        async function fetchData() {
+            const { data, error } = await supabase
+                .from('books')
+                .select('*');
+
+            if (error) {
+                console.error('Error retrieving data:', error);
+                return;
+            }
+        }
+    </script>
 </body>
 </html>
