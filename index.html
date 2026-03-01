@@ -36,7 +36,20 @@
                 console.error('Error retrieving data:', error);
                 return;
             }
+
+            const tableBody = document.getElementById('data-table');
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.id}</td>
+                    <td>${row.title}</td>
+                    <td>${row.author}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
         }
+
+        fetchData();
     </script>
 </body>
 </html>
