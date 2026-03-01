@@ -21,11 +21,11 @@
     </table>
 
     <script type="module">
-        import { createClient } from '@supabase/supabase-js'
+        import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
-        const supabaseUrl = 'https://rrbzxwuzrfidmjctawaz.supabase.co'
-        const supabaseKey = process.env.SUPABASE_KEY
-        const supabase = createClient(supabaseUrl, supabaseKey)
+        const supabaseUrl = 'https://rrbzxwuzrfidmjctawaz.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJyYnp4d3V6cmZpZG1qY3Rhd2F6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIzODk2OTMsImV4cCI6MjA4Nzk2NTY5M30.kkqVeG2dN4RGYdf11-OBwUEXpS7j_7_uebZCchOj8Jo';
+        const supabase = createClient(supabaseUrl, supabaseKey);
 
         async function fetchData() {
             const { data, error } = await supabase
